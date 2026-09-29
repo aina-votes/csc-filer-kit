@@ -65,7 +65,8 @@ shotpop | clearcookies | quit`
   time sink.
 - **`readpop` / `shotpop`** read or screenshot the newest popup tab. The disclosure preview, File
   Report and Filing Confirmations open in a NEW tab the main page cannot see; this is how you read
-  cash-on-hand.
+  cash-on-hand. The full text lands in `.tmp/csc/csc_pop_text.txt`; the status line is truncated,
+  so read the file.
 - **`batch`** enters Schedule A contributions from `data/batch_schedule_a.csv`, skipping keys
   already in `data/entered_ledger.csv`. It always asks the PORTAL whether a donor already has a name
   record (search the name grid, exact match on the name cell, wrapper-row guard) so carried-over

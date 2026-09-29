@@ -67,6 +67,13 @@ from the portal.
   the first row to the last, the export is gapless and there is no gap for a missing transaction
   to hide in. Say so explicitly: it is what lets you assert a variance of $0.00 rather than
   "appears to match".
+- **If the export has no `Balance` column** (OFX or a plain transactions CSV), reconstruct it
+  from an anchor: `balance(d) = anchor_balance - sum(txns on or before anchor date) + sum(txns on
+  or before d)`. Validate with **two independent anchors**, a printed statement balance inside the
+  window and the known current balance; if the forward walk lands exactly on the second anchor,
+  the file is complete. `on or before` the anchor date includes that day's transactions, and the
+  implied opening balance is the balance BEFORE the first row, so subtract day-one transactions
+  to get it. Ask the treasurer for one statement PDF to anchor against.
 - **`Status` matters.** `Pending` rows have a blank Balance and have not posted. A pending row
   dated inside the period but posting after it is next period's.
 - ActBlue bank memos read `ACTBLUE STS (AMA ACTBLUE ST ... <COMMITTEE>`. **STS = ActBlue Technical
@@ -194,6 +201,9 @@ REPORTS FILED": Report Name, Reporting Period, Deadline, **Filing Date**, **Amen
   investigate it; check this screen instead.
 - **Amend Mode has no banner.** The reliable test: the Preview `rpt_period` dropdown lists **one**
   option (current report) in normal mode and **every filed report** in amend mode.
+- **In that dropdown the option value (`report_id`) does not follow display or date order.**
+  Select a period by its visible text, never by assuming ids are chronological, and confirm the
+  period printed at the top of the preview before reading any line off it.
 
 ---
 
@@ -242,7 +252,7 @@ Control files live in `<kit>/.tmp/csc/`.
   die on "State: Required field / Zip Code: Required field" with the other fields filled; the
   insert is rejected so no partial record exists and a plain re-run of `batch` fixes it.
 - **On the Schedule B add form the payee renders near the BOTTOM.** A read-back guard that only
-  inspects the first ~300 chars of `body.innerText` will falsely fail. Search the whole string; the
+  inspects the first ~220 chars of `body.innerText` will falsely fail. Search the whole string; the
   pre-populated `sa_address_1` is a better identity check than the name.
 - **The amount field applies a currency mask**, so `25.00` reads back as `$ 25.00`. Strip `$` and
   `,` before comparing or every read-back guard fails.

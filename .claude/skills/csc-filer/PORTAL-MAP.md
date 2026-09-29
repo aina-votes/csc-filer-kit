@@ -325,7 +325,8 @@ inputs and unrelated labels.
 Preview/Print (item_28) → select period → radio **`#id-opt-rpt_name-8`** (`DIS`; the group is
 SA/SB/SC/SD/SE/SF/SF2/DIS) → **Preview Report `a#sub_form_b`**, onclick `scBtnFn_sys_format_ok()` —
 call it directly. The report opens as an **HTML page in a new tab** (`ccadmin_prev_dis`), not a PDF;
-read it with `readpop`.
+read it with `readpop`. **`readpop` writes the full text to `.tmp/csc/csc_pop_text.txt`; the status
+echo shows only the first ~700 chars, so read the file**, or Line 6 is off the end of what you saw.
 
 Lines that matter:
 
