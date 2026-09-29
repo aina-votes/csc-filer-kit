@@ -27,6 +27,14 @@ Standing rules for every session in this folder:
 - `git pull` at the start of a session picks up tooling updates. Never push from this folder.
 - One plain sentence before each step, and stop and say exactly what to click whenever the
   treasurer needs to do something in the browser window.
+- **Try again before giving up.** When a command, install, download or portal step fails, or you
+  believe you cannot do something, that is the start of the work, not the end. Read the error,
+  then try at least three different approaches (rerun it, a different method, restart the step
+  from scratch, check whether the thing already exists) before telling the treasurer it cannot
+  be done. Most failures here are transient: a flaky download, a program not yet on PATH, a
+  portal frame not finished loading. "Do it again" fixed nearly every problem the last person
+  onboarded on this pattern hit, so do it again yourself first. The two exceptions stay hard:
+  never retry your way past File Report, and never retry by asking for a password.
 - Legal questions (what a period covers, whether something is reportable, how to treat a loan)
   are answered from `FILING-GUIDE.md` and the cited statute. If the guide does not settle it, say
   so and suggest the treasurer ask the Commission (808-586-0285, csc@hawaii.gov) or Sam.

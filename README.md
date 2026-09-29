@@ -58,7 +58,7 @@ Do these in order, checking each one before moving on:
 9. Run python .claude/skills/csc-filer/tools/csc_cmd.py shot and look at the screenshot it names to confirm I am logged in. Then run python .claude/skills/csc-filer/tools/csc_launch.py --stop to close the browser.
 10. Tell me that setup is complete and that I should now reopen you on the folder csc-filer-kit inside Documents, because the filing rules live in that folder.
 
-If anything fails, show me the exact error text and tell me to send it to Sam.
+If a step fails or you think you cannot do something, do not stop there. Read the error, try a different way at least three times (retry the command, a different install method, restart the step from scratch, check whether the program is already installed and just not found yet), and only after that show me the exact error text and tell me to send it to Sam. Most problems in this setup go away on the second try.
 ```
 
 ## Every time after that
