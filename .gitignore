@@ -1,0 +1,21 @@
+# Donor names, addresses, bank activity, working papers. Never committed.
+data/
+
+# The treasurer's logged-in browser session.
+.csc_profile/
+.csc_profile*/
+
+# Driver control files, screenshots, logs.
+.tmp/
+
+# Any credentials file.
+.env
+.env.*
+
+# Installed dependencies and generated files.
+node_modules/
+__pycache__/
+*.pyc
+PORTAL-MAP.generated.md
+.DS_Store
+Thumbs.db
