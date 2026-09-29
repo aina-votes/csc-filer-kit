@@ -2,7 +2,7 @@
 
 This kit lets Claude, running on your own computer, do the data entry for your committee's
 reports in the Hawaii Campaign Spending Commission's filing portal (csc.hawaii.gov/CFS). You give
-it your bank and ActBlue exports, it enters the rows, runs the portal's own checks, and proves
+it your bank and Squarespace donation exports, it enters the rows, runs the portal's own checks, and proves
 that the cash-on-hand figure matches your bank statement to the penny. Then you click File
 Report. Claude never files.
 
@@ -12,7 +12,7 @@ This page gets you set up. It assumes you have never done any of this before. Bu
 
 Claude opens a real browser window on the portal. You log in there, the same way you always do;
 Claude never sees or asks for your password. From then on Claude works inside that window while
-you watch: it reads what is already entered, compares it with your bank and ActBlue files, shows
+you watch: it reads what is already entered, compares it with your bank and Squarespace files, shows
 you a table of what it plans to add or remove, and waits for you to say yes. When the report
 previews with the right cash-on-hand, it stops and tells you the File Report button is yours.
 Nothing about your donors or your bank leaves your computer.
@@ -69,9 +69,14 @@ go"):
 
 - **Your bank export.** Log into the committee's online banking, open the account activity for the
   reporting period, and download it as a **CSV** (not PDF). Put it in `data/bank`.
-- **Your ActBlue export**, if the committee uses ActBlue. Log into secure.actblue.com, open the
-  committee dashboard, and download the contributions CSV for the period, plus the refunds if
-  there are any. Put them in `data/actblue`.
+- **Your Squarespace donations export.** Log into the committee's Squarespace site, open the
+  **Donations** dashboard, click **View all** under Contributions, then **Export Data** and
+  **Download .csv**. When it asks All funds or Specific fund, choose **Specific fund**: that is
+  the only export that includes the donation form answers (employer and occupation), which the
+  Commission requires. If the site has more than one fund, download one file per fund. Put them
+  in `data/squarespace`.
+- **Your ActBlue export**, only if the committee also uses ActBlue: the contributions CSV for
+  the period plus any refunds, from secure.actblue.com, into `data/actblue`.
 
 Then say what you want in plain English:
 

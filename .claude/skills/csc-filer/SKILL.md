@@ -9,7 +9,7 @@ description: "Enters a Hawaii campaign committee's contributions, expenditures, 
 
 | File | What it is | Read it for |
 |---|---|---|
-| **`FILING-GUIDE.md`** | §0 "START HERE", the orientation, then everything learned filing real reports | prior period paper → log in and let the portal *tell* you the report name, period and deadline → verify committee and depositories → bank CSV → ActBlue CSVs → Filing Confirmations. Also the settled ActBlue-fee booking and the deposit-basis rule. |
+| **`FILING-GUIDE.md`** | §0 "START HERE", the orientation, then everything learned filing real reports | prior period paper → log in and let the portal *tell* you the report name, period and deadline → verify committee and depositories → bank CSV → Squarespace (and any ActBlue) CSVs → Filing Confirmations. Also processor-fee booking and the deposit-basis rule. |
 | **`PORTAL-MAP.md`** | the portal reference manual | every frame path, menu id, `cn_*`/`sa_*`/`sb_*`/`sc_*`/`sd_*` field, radio value and category code, plus the gotchas that cost time |
 
 **Refresh the map at the start of a filing session:** with the driver running and logged in,
@@ -76,7 +76,8 @@ shotpop | clearcookies | quit`
 ### The batch CSV
 
 `data/batch_schedule_a.csv`, one monetary contribution per row, with these headers (the ActBlue
-column names, so an ActBlue export maps straight across):
+column names; a Squarespace export is mapped onto them by reading its header row, see
+`FILING-GUIDE.md` §3):
 
 `Donor First Name, Donor Last Name, Donor Addr1, Donor Addr2, Donor City, Donor State, Donor ZIP,
 Donor Occupation, Donor Employer, Date, Amount, Deposit No., Non-Resident`
@@ -90,8 +91,8 @@ treasurer before running `batch`.
 
 1. **Orient.** `FILING-GUIDE.md` §0, all six rows, in order.
 2. **Scope the report on a deposit basis.** Include only money that hit or left the committee
-   BANK ACCOUNT by the period-end date. Sources: the bank CSV, the ActBlue CSVs (paid and
-   refunded), any other processor exports, the treasurer's own list of checks written. Map each
+   BANK ACCOUNT by the period-end date. Sources: the bank CSV, the Squarespace donations CSVs,
+   any ActBlue CSVs (paid and refunded), any other processor exports, the treasurer's own list of checks written. Map each
    contribution to the deposit that carried it.
 3. **Reconcile and build the delta** (delete / keep / add) against what is already in the portal.
    Pull the live Schedule A and B grids, match by (name, date, amount, deposit), and HARD-COUNT
@@ -118,6 +119,7 @@ treasurer before running `batch`.
 | What | Where |
 |---|---|
 | Bank CSV exports | `data/bank/` |
+| Squarespace donations exports | `data/squarespace/` |
 | ActBlue and other processor exports | `data/actblue/`, `data/processors/` |
 | The Schedule A batch file and its ledger | `data/batch_schedule_a.csv`, `data/entered_ledger.csv` |
 | Per-period working paper and entry scripts | `data/periods/<period>/transactions.md`, `.../scripts/` |

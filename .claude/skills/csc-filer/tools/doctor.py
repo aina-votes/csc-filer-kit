@@ -96,7 +96,7 @@ else:
     fail("csc_driver.mjs missing", "the kit is incomplete; re-clone it")
 
 # folders + gitignore
-for d in ("data", "data/bank", "data/actblue", "data/periods", ".tmp/csc"):
+for d in ("data", "data/bank", "data/squarespace", "data/actblue", "data/periods", ".tmp/csc"):
     (ROOT / d).mkdir(parents=True, exist_ok=True)
 ok("data/ and .tmp/csc/ folders exist")
 gi = (ROOT / ".gitignore").read_text(encoding="utf-8") if (ROOT / ".gitignore").exists() else ""

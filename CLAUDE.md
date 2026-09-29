@@ -16,7 +16,7 @@ Standing rules for every session in this folder:
   report the totals and the Line 6 tie-out, and hand off.
 - **Never ask for, type, store, or read a password.** The treasurer logs into the portal by hand in
   the browser window the driver opens. The session lives in `.csc_profile/`, which you do not read.
-  Bank and ActBlue logins are the treasurer's too: ask for CSV exports, not credentials.
+  Bank, Squarespace and ActBlue logins are the treasurer's too: ask for CSV exports, not credentials.
 - **Verify the committee after every login** (Org Report) and say what you see.
 - **Show every delta before entering it** and wait for a yes. Portal deletions are one row at a
   time and cannot be undone from here.
