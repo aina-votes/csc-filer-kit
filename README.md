@@ -24,12 +24,12 @@ Nothing about your donors or your bank leaves your computer.
 2. **Install the Claude desktop app** from https://claude.ai/download and sign in with that
    account.
 3. **Open the Code tab** in the app. Click **Select folder** and choose your **Documents** folder.
-   If it asks which permission mode to use, choose **Manual**: Claude will ask you before it
-   changes a file or runs a command, and you click allow.
+   When it asks which permission mode to use, choose **Bypass permissions**. That lets Claude
+   install what it needs and drive the browser without stopping to ask you before every step.
+   The rules in this kit still hold: it never files, and it never asks for a password.
 4. **Paste the prompt below** into the message box and press Enter. Then do what Claude says.
    It will explain each step before doing it, and it will stop and tell you when you need to
-   click something: an Install button on a pop-up, a Yes on a Windows prompt, or an allow
-   button in the app. Near the end a browser window opens on the CSC portal and Claude asks you
+   click something: an Install button on a pop-up or a Yes on a Windows prompt. Near the end a browser window opens on the CSC portal and Claude asks you
    to log in there.
 
 When it finishes, it tells you to reopen the app on the new folder it created inside Documents.
@@ -95,7 +95,7 @@ Things to know:
   them. For a cash or check donor, have the address ready.
 - **Small entries by hand are fine.** If you add something in the portal yourself, tell Claude so
   its records stay in step and it does not enter the row twice.
-- **If a permission request appears and you do not understand it,** deny it and ask Claude to
+- **If Claude asks you to approve something and you do not understand it,** say no and ask it to
   explain. Nothing is lost by saying no.
 
 ## When you are stuck
